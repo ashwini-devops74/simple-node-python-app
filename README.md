@@ -59,11 +59,9 @@ Ensure the following tools are installed on your system:
 
 ---
 
-## 🧪 Step 1: Create and Start Minikube Cluster
-
-### 💻 Command:
-    ```sh
-    minikube start --driver=docker
-    kubectl get nodes
-    ---
+## 🧪 Step 1: Ensure the pre requisites are installed in you machine
+```bash
+ minikube start --driver=docker
+ kubectl get node
+```  
 ### ✅ Expected Output:
