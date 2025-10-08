@@ -26,7 +26,7 @@ Each part simulates a real-world scenario and is implemented step-by-step.
 
 ### 🖼 Deliverables
 - `k8s_architecture.pdf` – Explanation document [k8s_architecture.pdf](k8s_architecture.pdf)
-- `k8s_architecture_diagram.png` – Architecture diagram  [k8s_architecture_diagram.png](k8s_architecture_diagram.png)
+- `k8s_architecture_diagram.png` – Architecture diagram  [K8s_architecture_diagram.png](K8s_architecture_diagram.png)
 
 ### ⚙️ Tools Used
 - Draw.io for architecture diagram  
