@@ -114,7 +114,7 @@ Deployed a Python app on minikube, configured Prometheus to scrape metrics, and 
 * [dashboard.json](grafana/dashboard.json)
 
 
-### Steps
+### Steps Followed
 * I have a metrics endpoint that provides my application metrics.
 
 * Create a `prometheus.yml` file to scrape the application metrics.  
@@ -161,7 +161,7 @@ Configured Nginx as a reverse proxy to forward traffic to the Python app.
 * [Dockerfile](nginx/Dockerfile)
 * [Docker-compose.yaml](nginx/docker-compose.yaml)
 
-### Steps
+### Steps Followed
 * Created an Nginx configuration file to reverse proxy my application to port 80 [nginx.conf](nginx/nginx.conf).
 
 * Built a Docker image by replacing the default Nginx config file with the newly created one [Dockerfile](nginx/Dockerfile) .
