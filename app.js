@@ -1,11 +1,12 @@
 const express = require('express');
-  const { exec } = require('child_process'); 
+
+const { exec } = require('child_process'); 
 
 const client = require('prom-client');
  
 const app = express();
 
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 3000;
  
 // Create a Registry to register metrics
 
