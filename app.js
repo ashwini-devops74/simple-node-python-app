@@ -68,4 +68,17 @@ app.listen(port, () => {
 
 });
 
+// API endpoint to run Python script
+app.get("/run-python", (req, res) => {
+  exec("python script.py", (error, stdout, stderr) => {
+    if (error) {
+      return res.status(500).send(`Error: ${error.message}`);
+    }
+    if (stderr) {
+      return res.status(500).send(`Stderr: ${stderr}`);
+    }
+    res.send(`Python Output: ${stdout}`);
+  });
+});
+
  
