@@ -146,10 +146,12 @@ Deployed a Python app on minikube, configured Prometheus to scrape metrics, and 
 * Heroku Hosting Issue – Created an account but found Heroku not fully open source and required card verification, so I hosted Prometheus and Grafana locally instead.
 
 * Prometheus Metrics Inaccessible – Metrics couldn’t be accessed even with correct scrape config because Prometheus and Minikube were on different networks.
-Fix: Ran Prometheus on the same network as Minikube using --network minikube.
+
+  Fix: Ran Prometheus on the same network as Minikube using --network minikube.
 
 * Grafana Data Source Issue – Unable to add Prometheus as a data source due to network difference.
-Fix: Used host.docker.internal:9090 instead of localhost:9090
+
+  Fix: Used host.docker.internal:9090 instead of localhost:9090
 
 ## Task 4: Nginx Reverse Proxy
 ### Project Description
@@ -160,11 +162,11 @@ Configured Nginx as a reverse proxy to forward traffic to the Python app.
 * [Docker-compose.yaml](nginx/docker-compose.yaml)
 
 ### Steps
-* Created an Nginx configuration file to reverse proxy my application to port 80.
+* Created an Nginx configuration file to reverse proxy my application to port 80 [nginx.conf](nginx/nginx.conf).
 
-* Built a Docker image by replacing the default Nginx config file with the newly created one.
+* Built a Docker image by replacing the default Nginx config file with the newly created one [Dockerfile](nginx/Dockerfile) .
 
-* Prepared a Docker Compose file to deploy both the application and Nginx in the same network (you can find it in the repository).
+* Prepared a Docker Compose file to deploy both the application and Nginx in the same network  [Docker-compose.yaml](nginx/docker-compose.yaml) 
 
 * Applied the Docker Compose file using the command below:
   ```bash
@@ -176,7 +178,8 @@ Configured Nginx as a reverse proxy to forward traffic to the Python app.
 
 ### Complication 
 * Port Conflict Issue – The port 3000 was already in use by Jenkins, which caused a conflict with my Node.js app.
-Fix: Updated the application port to 3030 in the Docker Compose file, which resolved the issue.
+
+  Fix: Updated the application port to 3030 in the Docker Compose file, which resolved the issue.
 
 
 
