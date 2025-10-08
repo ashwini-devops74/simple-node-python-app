@@ -1,11 +1,11 @@
-version: '3.8'
+#version: '3.8'
  
 services:
   node-app:
-    image: ashwiniconthub/sample-nodejs:version1
+    image: ashwiniconthub/sample-nodejs:latest
     container_name: node-app
     ports:
-      - "3000:3000"
+      - "3030:3000"
  
   nginx:
     image: ashwiniconthub/nginx:version1
