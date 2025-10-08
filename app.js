@@ -1,10 +1,11 @@
 const express = require('express');
+  const { exec } = require('child_process'); 
 
 const client = require('prom-client');
  
 const app = express();
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4000;
  
 // Create a Registry to register metrics
 
@@ -61,12 +62,6 @@ app.get('/metrics', async (req, res) => {
   res.end(await register.metrics());
 
 });
- 
-app.listen(port, () => {
-
-  console.log(`App running on port ${port}`);
-
-});
 
 // API endpoint to run Python script
 app.get("/run-python", (req, res) => {
@@ -82,3 +77,9 @@ app.get("/run-python", (req, res) => {
 });
 
  
+app.listen(port, () => {
+
+  console.log(`App running on port ${port}`);
+
+});
+
