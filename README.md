@@ -24,9 +24,6 @@ Each part simulates a real-world scenario and is implemented step-by-step.
   - **Worker Node**: kubelet, kube-proxy, container runtime  
 - Described how **Pods, Services, Deployments, and Namespaces** interact.
 
-### Files used:
-* [k8s_architecture.pdf](k8s_architecture.pdf)
-* [K8s_architecture_diagram.png](K8s_architecture_diagram.png)
 
 ### Deliverables
 - [k8s_architecture.pdf](k8s_architecture.pdf) – Explanation document 
