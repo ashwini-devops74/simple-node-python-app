@@ -42,68 +42,28 @@ The Jenkins server runs as a container, builds and pushes Docker images to Docke
 
 ---
 
-## 🏃 How to Run This Project
 
-### 📦 Prerequisites
-Make sure you have the following installed:
-- [Docker](https://docs.docker.com/get-docker/)  
-- [Minikube](https://minikube.sigs.k8s.io/docs/start/)  
-- [kubectl](https://kubernetes.io/docs/tasks/tools/)  
-- [Jenkins](https://www.jenkins.io/) (running inside Docker container)  
-- [Git](https://git-scm.com/)  
+## 🧩 Prerequisites
 
-### 💡 Challenges Faced
-- **Issue**: Jenkins container couldn’t access Minikube’s kubeconfig  
-  - **Fix**: Mounted host `.kube` folder into Jenkins container  
-    ```bash
-    -v C:\Users\<username>\.kube:/root/.kube:ro
-    ```
-- **Issue**: Permission errors when running `kubectl` inside Jenkins  
-  - **Fix**: Used `jenkins` container with `-u root` and mounted docker.sock  
+Ensure the following tools are installed on your system:
 
-### 📸 Screenshots
-- Successful build logs  
-- Pod and deployment details (`kubectl get pods`, `kubectl get svc`)  
+| Tool | Purpose | Command to Check |
+|------|----------|-----------------|
+| **Docker Desktop** | Container runtime | `docker --version` |
+| **Minikube** | Local Kubernetes cluster | `minikube version` |
+| **Kubectl** | Kubernetes CLI | `kubectl version --client` |
+| **Git** | Version control | `git --version` |
+| **Jenkins** | CI/CD automation server | `docker ps` |
+
+✅ **Tip:** Open **Docker Desktop** and ensure it is **running** before proceeding.
 
 ---
 
-## ✅ Part 3: Observability with Prometheus & Grafana
+## 🧪 Step 1: Create and Start Minikube Cluster
 
-### 🧰 Project
-Deployed a Python app on **Heroku**, configured **Prometheus** to scrape metrics, and visualized data using **Grafana**.
-
-### ⚙️ Steps
-1. Deployed app on Heroku – [Live App Link](https://your-app.herokuapp.com)  
-2. Configured `prometheus.yml` to scrape Heroku endpoint  
-3. Imported Grafana dashboard using JSON export  
-4. Visualized metrics such as request count and response time  
-
-### 🧾 Files Included
-- `prometheus.yml`  
-- `grafana_dashboard.json`  
-- `README_Observability.md`  
-
-### 💡 Challenges Faced
-- **Heroku Metrics Endpoint**: Needed to add `/metrics` route in Python app  
-- **Prometheus Target Down**: Solved by exposing correct Heroku port (5000) and using proper job target URL.  
-- **Grafana Connection**: Resolved CORS and connectivity issues by running all services on same network.  
-
----
-
-## ✅ Part 4: Nginx Reverse Proxy
-
-### 🧰 Project
-Configured **Nginx** as a reverse proxy to forward traffic to the Python app.
-
-### ⚙️ Steps
-1. Created `nginx.conf` to reverse proxy to `app:5000`  
-2. Wrote `Dockerfile` for Nginx  
-3. Ran Nginx container to route external traffic  
-
-```nginx
-server {
-    listen 80;
-    location / {
-        proxy_pass http://app:5000;
-    }
-}
+### 💻 Command:
+    ```sh
+    minikube start --driver=docker
+    kubectl get nodes
+    ---
+### ✅ Expected Output:
