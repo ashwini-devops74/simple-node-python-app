@@ -15,7 +15,8 @@ spec:
     spec:
       containers:
         - name: node-python-app
-          image: ashwiniconthub/sample-nodejs:version1
+          image: ashwiniconthub/sample-nodejs:latest
+          imagePullPolicy: Always 
           ports:
             - containerPort: 3000
 

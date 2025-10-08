@@ -1,0 +1,16 @@
+version: '3.8'
+ 
+services:
+  node-app:
+    image: ashwiniconthub/sample-nodejs:version1
+    container_name: node-app
+    ports:
+      - "3000:3000"
+ 
+  nginx:
+    image: ashwiniconthub/nginx:version1
+    container_name: nginx-proxy
+    ports:
+      - "80:80"
+    depends_on:
+      - node-app
