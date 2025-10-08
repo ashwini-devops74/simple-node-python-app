@@ -58,15 +58,28 @@ Ensure the following tools are installed on your system:
 #### Steps for deployment and automation.
 
 * Create a minikube cluster and ensure the cluster is created by running the below commands.
-```
+```bash
 minikube start driver="Docker"
 minikube status
 ```
-
-Apply the deployment files available in the  here.
+* Apply the deployment files available in the  [here](deployment).
+```bash
 kubectl apply -f ./deloyment
-Ensure the pods are running and service can reachable.
-To enable automation install jenkins in docker using below command.
+```
+* Ensure the pods are running and service can reachable.
+  
+* To enable automation install jenkins in docker using below command.
+```bash
+docker run -d --name jenkins `
+  -u root `
+  -p 8080:8080 -p 50000:50000 `
+  -v jenkins_home:/var/jenkins_home `
+  -v //var/run/docker.sock:/var/run/docker.sock `
+  -v C:\Users\{Username}\.kube:/root/.kube:ro `
+  -v C:\Users\{Username}\.minikube:/root/.minikube `
+  ashwiniconthub/jenkins:version1.0
+```
+* 
 Once installed configure fileline with the groovy script availe here.
 Ensure the docker hub credentials are available to push the imaged to docker hub.
 build the pipeline and ensure the pipeline complete the below stages.
