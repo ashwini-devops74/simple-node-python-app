@@ -25,7 +25,8 @@ Each part simulates a real-world scenario and is implemented step-by-step.
 - Described how **Pods, Services, Deployments, and Namespaces** interact.
 
 ### 🖼 Deliverables
-- `k8s_architecture.pdf` – Explanation document  
+- `k8s_architecture.pdf` – Explanation document
+- [k8s_architecture.pdf](k8s_architecture.pdf)
 - `k8s_architecture_diagram.png` – Architecture diagram  
 
 ### ⚙️ Tools Used
