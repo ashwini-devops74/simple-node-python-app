@@ -67,6 +67,7 @@ minikube status
 kubectl apply -f ./deloyment
 ```
 * Ensure the pods are running and service can reachable.
+![Pod](image/pod.jpg "showing-pod")
   
 * To enable automation install jenkins in docker using below command.
 ```bash
