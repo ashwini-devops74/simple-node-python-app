@@ -30,30 +30,27 @@ Each part simulates a real-world scenario and is implemented step-by-step.
 
 ### ⚙️ Tools Used
 - Draw.io for architecture diagram  
-- MS Word / Markdown for documentation  
-
-### 🧩 Challenges Faced
-- Understanding how internal communication happens between **API Server** and **kubelet**  
-- Initially confused about **Pod networking** inside cluster, resolved by testing with `kubectl exec` and `curl` between pods.
-
+- Overleaf for Documentation
 ---
 
 ## ✅ Part 2: CI/CD Pipeline with Jenkins
 
-### 🧰 Project
-Deployed a **Python application** to Kubernetes using a Jenkins CI/CD pipeline.
+### 🧰 Project Description
+This part automates the deployment of a **Python + Node.js** application into a **Kubernetes cluster** using a **Jenkins pipeline**.  
 
-### ⚙️ Pipeline Stages
-1. **Clone code** from GitHub  
-2. **Build Docker image** using Dockerfile  
-3. **Push image** to DockerHub  
-4. **Deploy to Kubernetes (Minikube)**  
-5. **(Optional)**: Auto rollback on failure  
+The Jenkins server runs as a container, builds and pushes Docker images to Docker Hub, and then deploys them on Minikube.
 
-### 🧾 Files Included
-- `Jenkinsfile` – Declarative pipeline configuration  
-- Sample app: `/app` directory  
-- Kubernetes manifests: `/k8s` directory  
+---
+
+## 🏃 How to Run This Project
+
+### 📦 Prerequisites
+Make sure you have the following installed:
+- [Docker](https://docs.docker.com/get-docker/)  
+- [Minikube](https://minikube.sigs.k8s.io/docs/start/)  
+- [kubectl](https://kubernetes.io/docs/tasks/tools/)  
+- [Jenkins](https://www.jenkins.io/) (running inside Docker container)  
+- [Git](https://git-scm.com/)  
 
 ### 💡 Challenges Faced
 - **Issue**: Jenkins container couldn’t access Minikube’s kubeconfig  
