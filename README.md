@@ -107,7 +107,7 @@ docker run -d --name jenkins `
 
 ## Project
 
-Deployed a Python app on Heroku, configured Prometheus to scrape metrics, and visualized data using Grafana.
+Deployed a Python app on minikube, configured Prometheus to scrape metrics, and visualized data using Grafana.
 
 ### Files used:
 * [prometheus.yml](prometheus/prometheus.yml)
