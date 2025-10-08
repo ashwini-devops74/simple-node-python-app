@@ -68,12 +68,12 @@ Ensure the following tools are installed on your system:
 
 * Create a minikube cluster and ensure the cluster is created by running the below commands.
 ```bash
-minikube start driver="Docker"
+minikube start --driver=docker 
 minikube status
 ```
 * Apply the deployment files available in the  [here](deployment).
 ```bash
-kubectl apply -f ./deloyment
+kubectl apply -f ./deployment
 ```
 * Ensure the pods are running and service can reachable.
 ![Pod](images/pod.png "showing-pod")
@@ -114,6 +114,7 @@ Deployed a Python app on Heroku, configured Prometheus to scrape metrics, and vi
 
 ### Files used:
 * [prometheus.yml](prometheus/prometheus.yml)
+* [dashboard.json](grafana/dashboard.json)
 
 
 ### Steps
@@ -137,6 +138,11 @@ docker run -d --name prometheus -p 9090:9090
 ```bash
 docker run -d --name grafana --network=minikube -p 3000:3000 grafana/grafana
 ```
+* Access the grafana in localhost:3000.
+* Add the prometheus as datasource.
+* Create a dashboard with the dashboard.json file availale [here](grafana/dashboard.json).
+* Access dashboard and monitor application.
+![grafana_output](images/grafana_output.png "jenkins")
 
 ### Complication 
 
