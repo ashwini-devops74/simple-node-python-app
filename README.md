@@ -67,7 +67,7 @@ minikube status
 kubectl apply -f ./deloyment
 ```
 * Ensure the pods are running and service can reachable.
-![Pod](image/pod.jpg "showing-pod")
+![Pod](images/pod.jpg "showing-pod")
   
 * To enable automation install jenkins in docker using below command.
 ```bash
@@ -80,7 +80,9 @@ docker run -d --name jenkins `
   -v C:\Users\{Username}\.minikube:/root/.minikube `
   ashwiniconthub/jenkins:version1.0
 ```
-* 
-Once installed configure fileline with the groovy script availe here.
-Ensure the docker hub credentials are available to push the imaged to docker hub.
-build the pipeline and ensure the pipeline complete the below stages.
+* Once installed configure pipeline with the groovy script available here.
+  
+* Ensure the docker hub credentials are available to push the imaged to docker hub.
+  
+* build the pipeline and ensure the pipeline complete the below stages.
+  
